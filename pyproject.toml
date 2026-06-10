@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lung-cancer"
+version = "1.0.0"
+description = "Screening model for lung cancer risk from a 15-question patient survey"
+authors = [{ name = "Collins Akagha" }]
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0", "numpy>=1.24", "scikit-learn>=1.3", "matplotlib>=3.7", "joblib>=1.3"]
+
+[project.scripts]
+lung-cancer-predict = "lung_cancer.predict:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
