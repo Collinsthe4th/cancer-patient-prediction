@@ -1,0 +1,105 @@
+{
+  "rows_raw": 309,
+  "rows_after_dedup": 276,
+  "positives": 238,
+  "negatives": 38,
+  "cv": "5-fold stratified, repeated 10 times (50 fits per model)",
+  "models": {
+    "Majority class (baseline)": {
+      "roc_auc": {
+        "mean": 0.5,
+        "std": 0.0
+      },
+      "pr_auc": {
+        "mean": 0.862,
+        "std": 0.009
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "specificity": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "balanced_accuracy": {
+        "mean": 0.5,
+        "std": 0.0
+      }
+    },
+    "Logistic regression": {
+      "roc_auc": {
+        "mean": 0.94,
+        "std": 0.036
+      },
+      "pr_auc": {
+        "mean": 0.991,
+        "std": 0.006
+      },
+      "recall": {
+        "mean": 0.869,
+        "std": 0.054
+      },
+      "specificity": {
+        "mean": 0.809,
+        "std": 0.144
+      },
+      "balanced_accuracy": {
+        "mean": 0.839,
+        "std": 0.076
+      }
+    },
+    "Random forest": {
+      "roc_auc": {
+        "mean": 0.93,
+        "std": 0.048
+      },
+      "pr_auc": {
+        "mean": 0.988,
+        "std": 0.011
+      },
+      "recall": {
+        "mean": 0.892,
+        "std": 0.048
+      },
+      "specificity": {
+        "mean": 0.821,
+        "std": 0.153
+      },
+      "balanced_accuracy": {
+        "mean": 0.857,
+        "std": 0.084
+      }
+    },
+    "Gradient boosting": {
+      "roc_auc": {
+        "mean": 0.899,
+        "std": 0.07
+      },
+      "pr_auc": {
+        "mean": 0.978,
+        "std": 0.023
+      },
+      "recall": {
+        "mean": 0.91,
+        "std": 0.04
+      },
+      "specificity": {
+        "mean": 0.691,
+        "std": 0.189
+      },
+      "balanced_accuracy": {
+        "mean": 0.801,
+        "std": 0.097
+      }
+    }
+  },
+  "best_model": "Logistic regression",
+  "top_features": {
+    "fatigue": 0.0265,
+    "allergy": 0.0256,
+    "chronic_disease": 0.0231,
+    "swallowing_difficulty": 0.0202,
+    "alcohol_consuming": 0.0198
+  }
+}
