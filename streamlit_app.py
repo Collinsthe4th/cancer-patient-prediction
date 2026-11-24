@@ -20,7 +20,10 @@ from lung_cancer.data import SYMPTOMS, load  # noqa: E402
 from lung_cancer.models import candidate_models, split_xy  # noqa: E402
 from lung_cancer.predict import build_row  # noqa: E402
 
-st.set_page_config(page_title="Lung Cancer Survey Screening", page_icon="🫁", layout="wide")
+st.set_page_config(page_title="Lung Cancer Risk Screening", layout="wide")
+
+HEADER = "https://images.unsplash.com/photo-1581594294883-5109c202942f?auto=format&fit=crop&w=1600&h=340&q=80"
+st.image(HEADER, use_container_width=True)
 
 
 @st.cache_resource
@@ -34,8 +37,8 @@ def train():
 
 model, df, metrics = train()
 
-st.title("🫁 Lung Cancer Survey: Risk Screening")
-st.warning("Learning project on a public survey of 276 people. This is not a medical tool and must not be used to diagnose anyone.")
+st.title("Lung Cancer Risk Screening")
+st.warning("This is a learning project built on a public survey of 276 people. It is not a medical tool and must not be used to diagnose anyone.")
 
 left, right = st.columns([1, 1.3])
 with left:
@@ -76,4 +79,4 @@ with c2:
     st.bar_chart(rates, horizontal=True)
     st.caption("Smoking barely separates the groups in this survey (50% against 55%).")
 
-st.markdown("[Source code and README](https://github.com/Collinsthe4th/cancer-patient-prediction)")
+st.markdown("[Source code and README](https://github.com/Collinsthe4th/cancer-patient-prediction) · Header photo from Unsplash.")

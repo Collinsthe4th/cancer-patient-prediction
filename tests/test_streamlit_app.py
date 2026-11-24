@@ -13,6 +13,7 @@ APP = str(Path(__file__).resolve().parents[1] / "streamlit_app.py")
 def test_app_runs():
     at = AppTest.from_file(APP, default_timeout=120).run()
     assert not at.exception
-    assert at.title[0].value.startswith("🫁 Lung")
+    assert at.title[0].value == "Lung Cancer Risk Screening"
+    assert at.image  # header photo is shown
     at.checkbox[0].check().run()
     assert not at.exception
